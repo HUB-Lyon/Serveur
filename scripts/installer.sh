@@ -107,5 +107,3 @@ echo "--------------------------------------------------------------------------
 
 echo "Press enter to proceed to the installation"
 read -r
-
-sudo nixos-install --flake "github:ArthurDelbarre/Nix#router" --no-write-lock-file --show-trace

@@ -1,5 +1,5 @@
 {
-    description = "Nix config for my HUB project";
+    description = "Nix config for server deployment";
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-21.11";
@@ -27,7 +27,7 @@
                 text = ''
                     #!${pkgs.stdenv.shell}
                     ${builtins.readFile ./scripts/installer.sh}
-                    sudo nixos-install --flake "github:ArthurDelbarre/Nix#router" --no-write-lock-file --show-trace
+                    sudo nixos-install --flake "github:HUB-Lyon/Serveurs#router" --no-write-lock-file --show-trace
                 '';
             };
         };
