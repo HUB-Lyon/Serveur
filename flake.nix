@@ -21,12 +21,12 @@
     in
     {
         packages.x86_64-linux = {
-            partioning = pkgs.writeShellApplication {
-                name = "partioning";
+            partitioning = pkgs.writeShellApplication {
+                name = "partitioning";
                 runtimeInputs = [ pkgs.git ];
                 text = ''
                     #!${pkgs.stdenv.shell}
-                    ${builtins.readFile ./scripts/partioning.sh}
+                    ${builtins.readFile ./scripts/partitioning.sh}
                 '';
             };
         };
