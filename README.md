@@ -12,3 +12,9 @@ After booting on a nix iso, run the following command :
 ```sh
 nix run --extra-experimental-features nix-command --extra-experimental-features flakes "github:HUB-Lyon/Serveurs#partitioning" --no-write-lock-file
 ```
+
+After that run this command to proceed to the installation :
+
+```sh
+nixos-install --flake "github:HUB-Lyon/Serveurs#router" --no-write-lock-file --show-trace
+```

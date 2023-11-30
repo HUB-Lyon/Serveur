@@ -27,7 +27,6 @@
                 text = ''
                     #!${pkgs.stdenv.shell}
                     ${builtins.readFile ./scripts/installer.sh}
-                    sudo nixos-install --flake "github:HUB-Lyon/Serveurs#router" --no-write-lock-file --show-trace
                 '';
             };
         };
