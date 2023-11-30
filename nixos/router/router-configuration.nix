@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 let
     # Network interface names for the external (internet-facing) and internal (local network) interfaces
-    externalInterface = "enp1s0";  # Change this to match your external interface name
-    internalInterface = "enp2s0";  # Change this to match your internal interface name
+    externalInterface = "wlp10s0";  # Change this to match your external interface name
+    internalInterface = "enop1";  # Change this to match your internal interface name
     publicDnsServer = "8.8.8.8";
 in
 {
@@ -53,13 +53,11 @@ in
                     chain prerouting {
                         type nat hook prerouting priority dstnat; policy accept;
                         iifname "${externalInterface}" tcp dport 8006 dnat to 10.13.84.50
-                        iifname "${externalInterface}" tcp dport 80 dnat to 10.13.84.51
                     }
                     chain postrouting {
                         type nat hook postrouting priority srcnat; policy accept;
                         oifname "${externalInterface}" masquerade
                         ip daddr 10.13.84.50 masquerade
-                        ip daddr 10.13.84.51 masquerade
                     }
                 }
 
